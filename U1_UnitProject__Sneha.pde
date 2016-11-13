@@ -4,10 +4,10 @@ float[] data2 = {width*2, width*3, width*5, width*7, width*9, width*11, width*13
 int i = 1;
 float numLines = 100;
 int yDirection;
-float x = width*0.06;
+float x = width*0.6;
 float y = height*0.7;
 int ySpeed = 16;
-int score = 1;
+int score = 0;
 
 void setup()
 {
@@ -20,16 +20,16 @@ void setup()
 
 void draw()
 {
-  background(37,131,246);
+  background(134, 47, 278);
   
   
   strokeWeight(2);
   line(data[0], height*0, data[0], height*0.4); // how long the lines are going to be 
-  line(data[1], height*0, data[1], height*0.2); // based on their y values
+  line(data[1], height*0.2, data[1], height*0.2); // based on their y values
   line(data[2], height*0, data[2], height*0.3);
-  line(data[3], height*0, data[3], height*0.3);
+  line(data[3], height*0.2, data[3], height*0.3);
   line(data[4], height*0, data[4], height*0.25);
-  line(data[5], height*0, data[5], height*0.35);
+  line(data[5], height*0.2, data[5], height*0.35);
   line(data[6], height*0, data[6], height*0.15);
   
   strokeWeight(2);
@@ -41,23 +41,23 @@ void draw()
   line(data2[5], height*0.525, data2[5], height*1);
   line(data2[6], height*0.275, data2[6], height*1);
   
-  strokeWeight(1);
+  strokeWeight(2);
   fill(0,255,0);
   ellipse(56, 46, 55, 55);
   
   fill(255,165,0);
    ellipse(56, 46, 55, 55);
   
-  fill(255);
+  fill(0, 255, 0);
   ellipse(56, 46, 55, 55);
   
-  fill(255);
+  fill(0, 255, 0);
    ellipse(56, 46, 55, 55);
   
-  fill(255);
+  fill(0, 255, 0);
    ellipse(56, 46, 55, 55);
   
-  fill(255);
+ fill(0, 255, 0);
    ellipse(56, 46, 55, 55);
   
   textSize(75);
@@ -76,10 +76,10 @@ void draw()
   }
   else 
   {
-    y = y + 2;
+    y = y - 2;
   }
   
-  if (collision()) // what happens when the character touches any of the lines
+  if (collision()) // what happens when the ellipse touches any of the lines
   {
     delay(3000);
     
@@ -106,7 +106,7 @@ void draw()
   
   if (noCollision()) //what happens when there is no collision with each of the lines
   {
-    score = score + 1;    
+    score = score + 5;    
   }
   
   if (lines()) //what happens if the lines go out of the screen when moving
